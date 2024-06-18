@@ -1,9 +1,10 @@
 package com.Repository;
 
-import com.Model.anime;
+import com.Model.user;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AnimeRepository extends JpaRepository<anime, Long> {
+public interface UserRepository extends JpaRepository<user, Long> {
+    user findByUsername(String username);
 }
