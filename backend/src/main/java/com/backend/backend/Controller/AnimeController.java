@@ -1,7 +1,8 @@
-package com.Controller;
+package com.backend.backend.Controller;
 
-import com.Model.anime;
-import com.Repository.AnimeRepository;
+import com.backend.backend.Model.anime;
+import com.backend.backend.Repository.AnimeRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

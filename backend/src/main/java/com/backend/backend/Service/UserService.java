@@ -1,7 +1,7 @@
-package com.Service;
+package com.backend.backend.Service;
 
-import com.Model.user;
-import com.Repository.UserRepository;
+import com.backend.backend.Model.user;
+import com.backend.backend.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.Repository;
+package com.backend.backend.Repository;
 
-import com.Model.anime;
+import com.backend.backend.Model.anime;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
