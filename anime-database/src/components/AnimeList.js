@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AnimeItem from './AnimeItem';
 import SearchBar from './SearchBar';
 import api from '../services/api';
+import '../styles/index.css';
 
 function AnimeList() {
   const [animes, setAnimes] = useState([]);
@@ -13,7 +14,7 @@ function AnimeList() {
   }, []);
 
   return (
-    <div>
+    <div className="anime-list"> {/* Apply anime-list class */}
       <SearchBar setAnimes={setAnimes} />
       <ul>
         {animes.map(anime => (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../services/api';
+import '../styles/index.css';
 
 function SearchBar({ setAnimes }) {
   const [query, setQuery] = useState('');
@@ -13,14 +14,15 @@ function SearchBar({ setAnimes }) {
   };
 
   return (
-    <div>
+    <div className="search-bar">
       <input
         type="text"
+        className="search-input" 
         placeholder="Search..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className="search-button" onClick={handleSearch}>Search</button> {/* Apply search-button class */}
     </div>
   );
 }

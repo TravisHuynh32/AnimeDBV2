@@ -4,12 +4,15 @@ import AnimeList from './components/AnimeList';
 import UserAnimeList from './components/UserAnimeList';
 import Login from './components/Login';
 import Register from './components/Register';
+import Header from './components/Header'; // Import your Header component
 import './styles/App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
+      
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import api from '../services/api';
+import '../styles/index.css'; // Import index.css from the styles folder
 
 function AnimeItem({ anime }) {
   const handleAddToUser = () => {
@@ -7,12 +7,10 @@ function AnimeItem({ anime }) {
   };
 
   return (
-    <li>
+    <li className="anime-item" style={{ listStyleType: 'none' }}> {/* Apply anime-item class and remove bullet points */}
       <h2>{anime.title}</h2>
-      <p>{anime.genres}</p>
       <p>{anime.rating}</p>
-      <p>{anime.synopsis}</p>
-      <button onClick={handleAddToUser}>Add to My List</button>
+      
     </li>
   );
 }
