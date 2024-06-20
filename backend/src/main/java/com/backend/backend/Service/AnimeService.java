@@ -28,4 +28,8 @@ public class AnimeService {
     public void deleteById(Long id) {
         animeRepository.deleteById(id);
     }
+
+    public List<anime> customSearchByTitle(String query) {
+        return animeRepository.customSearchByTitle("%" + query.toLowerCase() + "%");
+    }
 }

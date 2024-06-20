@@ -33,4 +33,9 @@ public class AnimeController {
     public void deleteAnime(@PathVariable Long id) {
         animeService.deleteById(id);
     }
+
+    @GetMapping("/search")
+    public List<anime> searchAnimes(@RequestParam(name = "query") String query) {
+        return animeService.customSearchByTitle(query);
+    }
 }

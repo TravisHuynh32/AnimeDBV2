@@ -10,7 +10,7 @@ function Login() {
 
   const handleLogin = () => {
     // Implement the login logic
-    navigate('/my-animes');
+    navigate('/');
   };
 
   return (

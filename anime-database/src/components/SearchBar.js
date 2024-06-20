@@ -5,8 +5,10 @@ function SearchBar({ setAnimes }) {
   const [query, setQuery] = useState('');
 
   const handleSearch = () => {
-    api.get(`/animes?query=${query}`).then(response => {
+    api.get(`/animes/search?query=${query}`).then(response => {
       setAnimes(response.data);
+    }).catch(error => {
+      console.error('Error searching anime:', error);
     });
   };
 
