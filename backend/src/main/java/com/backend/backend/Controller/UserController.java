@@ -1,30 +1,36 @@
 package com.backend.backend.Controller;
 
 import com.backend.backend.Model.user;
-import com.backend.backend.Repository.UserRepository;
+import com.backend.backend.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping
     public List<user> getAllUsers() {
-        return userRepository.findAll();
+        return userService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<user> getUserById(@PathVariable Long id) {
+        return userService.findById(id);
     }
 
     @PostMapping
     public user createUser(@RequestBody user user) {
-        return userRepository.save(user);
+        return userService.save(user);
     }
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
-        userRepository.deleteById(id);
+        userService.deleteById(id);
     }
 }

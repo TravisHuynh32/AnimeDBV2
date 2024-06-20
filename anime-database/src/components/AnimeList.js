@@ -1,0 +1,27 @@
+import React, { useEffect, useState } from 'react';
+import AnimeItem from './AnimeItem';
+import SearchBar from './SearchBar';
+import api from '../services/api';
+
+function AnimeList() {
+  const [animes, setAnimes] = useState([]);
+
+  useEffect(() => {
+    api.get('/animes').then(response => {
+      setAnimes(response.data);
+    });
+  }, []);
+
+  return (
+    <div>
+      <SearchBar setAnimes={setAnimes} />
+      <ul>
+        {animes.map(anime => (
+          <AnimeItem key={anime.id} anime={anime} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default AnimeList;
