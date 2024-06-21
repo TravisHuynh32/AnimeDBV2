@@ -22,7 +22,7 @@ function SearchBar({ setAnimes }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button className="search-button" onClick={handleSearch}>Search</button> {/* Apply search-button class */}
+      <button className="search-button" onClick={handleSearch}>Search</button> 
     </div>
   );
 }

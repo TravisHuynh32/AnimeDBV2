@@ -5,6 +5,7 @@ import UserAnimeList from './components/UserAnimeList';
 import Login from './components/Login';
 import Register from './components/Register';
 import Header from './components/Header'; // Import your Header component
+import SearchBar from './components/SearchBar';
 import './styles/App.css';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-      
+        {/*<SearchBar />*/}
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

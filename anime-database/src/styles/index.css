@@ -12,7 +12,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #1c1e22;
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -25,8 +25,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 10px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #ffffff; /* Darker input background */
+  color: #000000; /* Light text color */
 }
 
 .search-button {
@@ -43,60 +43,48 @@ body {
 }
 
 .anime-list-container {
-  margin-top: 80px;
+  margin-top: 80px; /* Adjusted according to header height */
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  justify-content: center; /* Center items in the container */
+  gap: 20px; /* Add gap between items */
 }
 
 .anime-item {
-  background-color: #000000;
+  background-color: #1c1e22;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 200px;
   transition: transform 0.3s ease;
-  margin: 10px;
-  text-align: center;
+  margin: 10px; /* Margin added for spacing around items */
+  text-align: center; /* Center-align content */
 }
 
 .anime-item:hover {
   transform: translateY(-5px);
 }
 
-.anime-image {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.anime-details {
-  margin-top: 10px;
-}
-
 .anime-title {
-  font-size: 1.2em;
-  margin: 0;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.anime-rating,
-.anime-genres {
-  font-size: 0.9em;
-  margin: 5px 0;
+.anime-rating {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.add-to-list-button {
+.anime-add-button {
   background-color: #e75555;
   color: #fff;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
-.add-to-list-button:hover {
+.anime-add-button:hover {
   background-color: #ff2727;
 }

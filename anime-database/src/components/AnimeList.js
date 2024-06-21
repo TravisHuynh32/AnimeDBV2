@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SearchBar from './SearchBar';
 import AnimeItem from './AnimeItem'; // Import the AnimeItem component
 import '../styles/index.css'; // Import index.css from the styles folder
 
@@ -21,13 +22,15 @@ const AnimeList = () => {
 
     fetchAnimes();
   }, []);
-
+  
   return (
-    <div className="anime-list-container">
-      {animes.map((anime) => (
-        <AnimeItem key={anime.id} anime={anime} />
-      ))}
-    </div>
+    <><div>
+      <SearchBar setAnimes={setAnimes} />
+    </div><div className="anime-list-container">
+        {animes.map((anime) => (
+          <AnimeItem key={anime.id} anime={anime} />
+        ))}
+      </div></>
   );
 };
 
