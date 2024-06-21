@@ -1,28 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import AnimeItem from './AnimeItem';
-import SearchBar from './SearchBar';
-import api from '../services/api';
-import '../styles/index.css';
+import React, { useState, useEffect } from 'react';
+import AnimeItem from './AnimeItem'; // Import the AnimeItem component
+import '../styles/index.css'; // Import index.css from the styles folder
 
-function AnimeList() {
+const AnimeList = () => {
   const [animes, setAnimes] = useState([]);
 
   useEffect(() => {
-    api.get('/animes').then(response => {
-      setAnimes(response.data);
-    });
+    const fetchAnimes = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/anime'); // Adjust the URL as needed
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setAnimes(data);
+      } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+      }
+    };
+
+    fetchAnimes();
   }, []);
 
   return (
-    <div className="anime-list"> 
-      <SearchBar setAnimes={setAnimes} />
-      <ul>
-        {animes.map(anime => (
-          <AnimeItem key={anime.id} anime={anime} />
-        ))}
-      </ul>
+    <div className="anime-list-container">
+      {animes.map((anime) => (
+        <AnimeItem key={anime.id} anime={anime} />
+      ))}
     </div>
   );
-}
+};
 
 export default AnimeList;
