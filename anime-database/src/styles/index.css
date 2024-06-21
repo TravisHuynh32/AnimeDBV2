@@ -16,14 +16,7 @@ body {
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-}
-
-.anime-list-container {
-  margin-top: 60px;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  display: flex;
 }
 
 .search-input {
@@ -49,36 +42,29 @@ body {
   background-color: #ff2727;
 }
 
+.anime-list-container {
+  margin-top: 80px; /* Adjusted according to header height */
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items in the container */
+  gap: 20px; /* Add gap between items */
+  align-items: center; /* Center items vertically */
+  min-height: calc(100vh - 100px); /* Ensure minimum height of container */
+}
+
 .anime-item {
   background-color: #000000;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  flex: 1 1 200px; /* Flexible width with minimum value */
+  max-width: calc(25% - 40px); /* Maximum width controls */
   transition: transform 0.3s ease;
+  margin: 10px; /* Margin added for spacing around items */
+  text-align: center; /* Center-align content */
 }
 
 .anime-item:hover {
   transform: translateY(-5px);
-}
-
-.anime-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.anime-image {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-.anime-title {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-}
-
-/* Additional styles for anime details page */
-.anime-details-container {
-  padding: 20px;
 }

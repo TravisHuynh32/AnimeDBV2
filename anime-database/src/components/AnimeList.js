@@ -14,7 +14,7 @@ function AnimeList() {
   }, []);
 
   return (
-    <div className="anime-list"> {/* Apply anime-list class */}
+    <div className="anime-list"> 
       <SearchBar setAnimes={setAnimes} />
       <ul>
         {animes.map(anime => (
