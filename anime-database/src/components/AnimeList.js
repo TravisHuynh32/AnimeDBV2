@@ -8,7 +8,7 @@ const AnimeList = () => {
   useEffect(() => {
     const fetchAnimes = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/anime'); // Adjust the URL as needed
+        const response = await fetch('http://localhost:8080/api/animes'); // Adjust the URL as needed
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
