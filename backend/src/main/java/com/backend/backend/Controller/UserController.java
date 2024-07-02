@@ -33,4 +33,14 @@ public class UserController {
     public void deleteUser(@PathVariable Long id) {
         userService.deleteById(id);
     }
+
+    @PostMapping("/login")
+    public user login(@RequestBody user user) {
+        user foundUser = userService.findByUsername(user.getUsername());
+        if (foundUser != null && foundUser.getPassword().equals(user.getPassword())) {
+            return foundUser;
+        } else {
+            throw new RuntimeException("Invalid credentials");
+        }
+    }
 }

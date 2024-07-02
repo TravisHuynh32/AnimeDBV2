@@ -1,16 +1,23 @@
 // src/components/Login.js
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import { UserContext } from './UserContext';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
-  const handleLogin = () => {
-    // Implement the login logic
-    navigate('/');
+  const handleLogin = async () => {
+    try {
+      const response = await api.post('/users/login', { username, password });
+      setUser(response.data); // Set the logged-in user context
+      navigate('/');
+    } catch (error) {
+      console.error('There was an error logging in:', error);
+    }
   };
 
   return (

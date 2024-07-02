@@ -1,27 +1,24 @@
+// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AnimeList from './components/AnimeList';
-import UserAnimeList from './components/UserAnimeList';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UserProvider } from './components/UserContext';
+import Header from './components/Header';
 import Login from './components/Login';
 import Register from './components/Register';
-import Header from './components/Header'; // Import your Header component
-import SearchBar from './components/SearchBar';
-import './styles/App.css';
+import AnimeList from './components/AnimeList';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <UserProvider>
+      <Router>
         <Header />
-        {/*<SearchBar />*/}
         <Routes>
+          <Route path="/" element={<AnimeList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/my-animes" element={<UserAnimeList />} />
-          <Route path="/" element={<AnimeList />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </UserProvider>
   );
 }
 
